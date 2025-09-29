@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title Register
+    link(rel='stylesheet' href='/assets/css/styles.css')/
+  body
+    h1 Register
+
+    form(action="/register", method="post")
+      div
+        label(for="username") Username:
+        input(type="text", name="username", required)
+      div
+        label(for="email") Email:
+        input(type="email", name="email", required)
+      div
+        label(for="password") Password:
+        input(type="password", name="password", required)
+      div
+        button(type="submit") Register
+        a(href="/yatri")
+          button(type="button") Cancel

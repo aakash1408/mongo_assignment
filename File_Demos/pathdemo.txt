@@ -1,0 +1,9 @@
+const path = require('path');
+
+console.log(path.basename('D:\reactpro1\NodeWS\hello.js'))
+console.log(path.dirname('D:\reactpro1\NodeWS\hello.js'))
+console.log(path.extname('D:\reactpro1\NodeWS\hello.js'))
+console.log(path.join(__dirname, 'test.txt'))
+console.log(path.sep)
+console.log(path.delimiter)
+console.log(path.isAbsolute('D:\reactpro1\NodeWS\hello.js'))

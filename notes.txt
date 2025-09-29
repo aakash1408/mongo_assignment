@@ -1,0 +1,38 @@
+Features :- Non blocking, event driven, asynchronous, single threaded
+
+File System:-
+    -> asynchronous - readFile(), writeFile()
+                      function readFile('path of the file', encoding, () => {
+                        //code of the file operations
+                      }) 
+
+                      //OR
+                      
+                      function readFile('path of the file', () => {
+                        data.toString()
+                        //code of the file operations
+                      })
+
+    -> synchronous - readFileSync(), writeFileSync()
+
+
+Pug File ?
+  1. npm i Pug
+  2. Create the Views folder
+  3. In launcher file, 
+        app.set('views', './views')
+        app.set('view engine', 'pug')
+  4. Create the endpoints
+        app.get()
+
+morgan - For logs
+
+MongoDB:- 
+    Semi-Structured
+    Commands 
+    show dbs 
+    db.createCollections("")
+    db.collection_name.insertOne()
+    db.student.insertMany()
+    db.student.find()
+    db.student.find().pretty()

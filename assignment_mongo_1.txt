@@ -1,0 +1,132 @@
+db.createCollection("Food_Item")
+db.createCollection("Restaurant")
+----------------------------------------------------------------------------------------------------------
+1)
+
+db.Food_Item.insertOne({   name: "Dosa",   calorie: "500Kcal",   brand: "Vango", category: "South_Indian",  price: 400 })
+db.Food_Item.insertOne({   name: "Chole_Bhature",   calorie: "800Kcal",   brand: "Haldiram", category: "North_Indian",  price: 300 })
+
+db.Food_Item.insertMany([
+  {
+    name: "Paneer_Tikka",
+    calorie: "400Kcal",
+    brand: "Bikanervala",
+    category: "North_Indian",
+    price: 250
+  },
+  {
+    name: "Veg_Biryani",
+    calorie: "500Kcal",
+    brand: "Paradise",
+    category: "South_Indian",
+    price: 350
+  },
+  {
+    name: "Masala_Dosa",
+    calorie: "300Kcal",
+    brand: "Sagar_Ratna",
+    category: "South_Indian",
+    price: 150
+  }
+])
+
+
+db.Restaurant.insertOne({
+  name: "Haldiram",
+  "year_establishment": 2000,
+  location: "PAN_India",
+  contact: "328732",
+  email: "Haldiram.foods@gmail.com",
+  nos_of_days_open: "7",
+  city: "Delhi",
+  category: "Main_Course",
+  serving: "Dining"
+})
+db.Restaurant.insertOne({
+  name: "Bikanervala",
+  "year_establishment": 1950,
+  location: "PAN_India",
+  contact: "9876543210",
+  email: "contact@bikanervala.com",
+  nos_of_days_open: "7",
+  city: "Mumbai",
+  category: "Sweets_and_Snacks",
+  serving: "Dining"
+})
+db.Restaurant.insertMany([
+  {
+    name: "Paradise Biryani",
+    "year_establishment": 1953,
+    location: "PAN_India",
+    contact: "9988776655",
+    email: "info@paradisebiryani.com",
+    nos_of_days_open: "7",
+    city: "Hyderabad",
+    category: "Biryani",
+    serving: "Dining"
+  },
+  {
+    name: "Sagar Ratna",
+    "year_establishment": 1986,
+    location: "PAN_India",
+    contact: "8877665544",
+    email: "contact@sagarratna.com",
+    nos_of_days_open: "7",
+    city: "Bangalore",
+    category: "South_Indian",
+    serving: "Dining"
+  },
+  {
+    name: "Barbeque Nation",
+    "year_establishment": 2006,
+    location: "PAN_India",
+    contact: "7766554433",
+    email: "support@barbequenation.com",
+    nos_of_days_open: "7",
+    city: "Delhi",
+    category: "Grill",
+    serving: "Buffet"
+  }
+])
+-----------------------------------------------------------------------------------------
+2)
+
+db.Food_Item.find({category : "North_Indian"})
+db.Food_Item.find({category : "North_Indian"}).pretty()
+-----------------------------------------------------------------------------------------
+3)
+
+db.Restaurant.find({ city: { $in: ["Delhi", "Mumbai"] } }).pretty()
+-----------------------------------------------------------------------------------------
+4)
+
+db.Food_Item.updateMany(
+  { category: "Snack" },      
+  { $set: { price: 200 } }    
+)
+db.Food_Item.find().pretty()
+---------------------------------------------------------------------------------------------
+
+5)
+
+db.Restaurant.updateMany(
+  { city: "Delhi" },            
+  { $set: { location: "New Delhi Area" } }  
+)
+db.Restaurant.find().pretty()
+
+------------------------------------------------------------------------------------------------
+
+6)
+
+db.Food_Item.deleteOne({ brand: "Haldiram" })
+db.Food_Item.deleteMany({ category: "Juices" })
+db.Food_Item.find().pretty()
+
+----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
