@@ -60,7 +60,7 @@ db.products.find(
 
 db.products.aggregate([
   { $group: { _id: "$category", totalProducts: { $sum: 1 } } },
-  { $match: { totalProducts: { $gt: 5 } } }
+  { $match: { totalProducts: { $gt: 2 } } }
 ])
 
 
