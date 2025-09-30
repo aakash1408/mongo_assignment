@@ -62,7 +62,25 @@ db.products.aggregate([
   { $group: { _id: "$category", totalProducts: { $sum: 1 } } },
   { $match: { totalProducts: { $gt: 2 } } }
 ])
+----------------------------------------------------------------------------
+10)
 
+db.products.aggregate([
+  {
+    $project: {
+      category: 1,
+      revenue: { $multiply: ["$price", "$stock"] }
+    }
+  },
+  {
+    $group: {
+      _id: "$category",
+      totalRevenue: { $sum: "$revenue" }
+    }
+  },
+  { $sort: { totalRevenue: -1 } },
+  { $limit: 2 }
+])
 
 ----------------------------------------------------------------------------
 11)
