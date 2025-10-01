@@ -1,0 +1,4 @@
+const connectToDb = () =>mongoose.connect(
+    ""
+)
+

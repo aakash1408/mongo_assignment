@@ -43,3 +43,16 @@ AWS:-
     Code Trigger
     Code repos
     Code Pipeline
+
+Project :- 
+    Create project - npm init 
+    with all the required - express, mongoose, cors, bcrypt, jsonwebtoken, dotenv.
+    project/
+      -index.js/server.js
+      -model/
+        -schemas
+      -controller/
+        -controller - we define the routes
+      - routers/
+        -create base urls for going to controllers
+      -.env - to define the project environment creation with variables - toke, secret key, razor, api key etc.
