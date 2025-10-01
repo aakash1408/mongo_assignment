@@ -36,3 +36,10 @@ MongoDB:-
     db.student.insertMany()
     db.student.find()
     db.student.find().pretty()
+
+AWS:-
+    AWS Lambda
+    Code Deploy
+    Code Trigger
+    Code repos
+    Code Pipeline
